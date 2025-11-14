@@ -3,7 +3,7 @@ import image1 from '../../../assets/image1.webp';
 import image2 from '../../../assets/image2.png';
 import image3 from '../../../assets/image3.png';
 import Button from '../button/Button';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 
 export default function Content() {
@@ -20,7 +20,7 @@ export default function Content() {
                 <Button onClick={handleOnClick} text="Try FireBase Studio" styleClass="cursor-pointer bg-amber-500 w-[200px] text-black rounded-3xl p-4"/>
 
             </div>
-            <div class="relative w-full min-h-screen bg-gradient-to-b from-black via-black/90 to-yellow-600 p-8">
+            <div class="relative w-full min-h-screen  bg-[linear-gradient(to_bottom,black,#b22234,#c83b32,#e54a22,#f57a21,#f7b731,black)] p-8">
 
                 <div class="relative z-10 bg-[#1e1e1e] rounded-2xl shadow-2xl w-3/4 h-[700px] mx-auto ">
                     <div class="p-6 text-green-300 font-mono">

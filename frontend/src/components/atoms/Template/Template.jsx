@@ -2,10 +2,17 @@ import Card from "../Card/Card";
 import imageUrl from "../../../assets/react.svg";
 import Button from "../button/Button";
 import axios from "../../../config/axiosConfig.js";
+import { useCreateProject } from "../../../hooks/apis/mutations/useCreateProject.js";
 
 export default function Template() {
-  function handleOnClick() {
-    axios.post("/api/v1/projects");
+  const { createProjectMutation } = useCreateProject();
+  async function handleOnClick() {
+    try {
+      await createProjectMutation();
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
   }
 
   return (
@@ -27,10 +34,10 @@ export default function Template() {
         </div>
 
         {/* Button + Card */}
-        <div className="flex justify-start">
+        <div className="flex justify-start ">
           <Button
             onClick={handleOnClick}
-            styleClass="m-4 hover:scale-105 transition-all duration-200"
+            styleClass="m-4 hover:scale-105  transition-all duration-200"
             text={
               <Card
                 title="React"
