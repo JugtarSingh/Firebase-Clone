@@ -1,14 +1,17 @@
 import Card from "../Card/Card";
 import imageUrl from "../../../assets/react.svg";
 import Button from "../button/Button";
-import axios from "../../../config/axiosConfig.js";
 import { useCreateProject } from "../../../hooks/apis/mutations/useCreateProject.js";
+import { useNavigate } from "react-router-dom";
 
 export default function Template() {
+  const navigate = useNavigate();
   const { createProjectMutation } = useCreateProject();
   async function handleOnClick() {
     try {
-      await createProjectMutation();
+      const response = await createProjectMutation();
+      navigate(`/projects/${response.data}`);
+       
     } catch (error) {
       console.log(error);
       throw error;

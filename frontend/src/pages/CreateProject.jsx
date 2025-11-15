@@ -4,7 +4,7 @@ import Navbar from "../components/atoms/NavBar/Navbar";
 import { useCreateProject } from "../hooks/apis/mutations/useCreateProject"
 import imageUrl from '../assets/react.svg'
 
-export function CreateProject(){
+export default function CreateProject(){
     
     const {createProjectMutation , isPending } = useCreateProject();
     async function handleOnClick(){
